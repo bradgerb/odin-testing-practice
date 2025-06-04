@@ -35,3 +35,7 @@ test('returns string shifted by some factor - case preservation test', () => {
 test('returns string shifted by some factor - punctuation test', () => {
     expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
 });
+
+// test('returns sum of two numbers', () => {
+//     expect(analyzeArray([]).average).toBe(65);
+// });

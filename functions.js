@@ -33,7 +33,7 @@ const calculator = {
     let lowerCaseString = string.toLowerCase();
     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-    for(let i = 0; i <= string.length; i++) {
+    for(let i = 0; i < string.length; i++) {
         if (alphabet.includes(lowerCaseString.charAt(i))) {
             if(string.charAt(i) === lowerCaseString.charAt(i)) {
                 cipherString += String.fromCharCode(charCodeWrapValue(lowerCaseString.charAt(i), shiftFactor));
@@ -54,5 +54,9 @@ const calculator = {
 
     return zeroedShiftedChar + 97
  }
+
+function analyzeArray() {
+
+}
 
 module.exports = { capitalize, reverseString, calculator, caesarCipher }
