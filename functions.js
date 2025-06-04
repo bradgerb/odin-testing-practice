@@ -29,7 +29,30 @@ const calculator = {
  }
 
  function caesarCipher(string, shiftFactor) {
-    return string
+    let cipherString = '';
+    let lowerCaseString = string.toLowerCase();
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+    for(let i = 0; i <= string.length; i++) {
+        if (alphabet.includes(lowerCaseString.charAt(i))) {
+            if(string.charAt(i) === lowerCaseString.charAt(i)) {
+                cipherString += String.fromCharCode(charCodeWrapValue(lowerCaseString.charAt(i), shiftFactor));
+            } else {
+                cipherString += String.fromCharCode(charCodeWrapValue(lowerCaseString.charAt(i), shiftFactor)).toUpperCase();
+            }
+        } else {
+            cipherString += string.charAt(i);
+        }
+    }
+    return cipherString
+ }
+
+ function charCodeWrapValue(char, shift) {
+    let zeroedChar = char.charCodeAt(0) - 97;
+    let shiftedChar = zeroedChar + shift;
+    let zeroedShiftedChar = shiftedChar % 26
+
+    return zeroedShiftedChar + 97
  }
 
 module.exports = { capitalize, reverseString, calculator, caesarCipher }
