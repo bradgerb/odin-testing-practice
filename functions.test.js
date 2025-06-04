@@ -1,4 +1,4 @@
-const { capitalize, reverseString, calculator, caesarCipher } = require('./functions');
+const { capitalize, reverseString, calculator, caesarCipher, analyzeArray } = require('./functions');
 
 test('capitalize first character of string', () => {
     expect(capitalize('hello world')).toBe('Hello world');
@@ -36,6 +36,18 @@ test('returns string shifted by some factor - punctuation test', () => {
     expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
 });
 
-// test('returns sum of two numbers', () => {
-//     expect(analyzeArray([]).average).toBe(65);
-// });
+test('returns sum of two numbers', () => {
+    expect(analyzeArray([1,8,3,4,2,6]).average).toBe(4);
+});
+
+test('returns sum of two numbers', () => {
+    expect(analyzeArray([1,8,3,4,2,6]).min).toBe(1);
+});
+
+test('returns sum of two numbers', () => {
+    expect(analyzeArray([1,8,3,4,2,6]).max).toBe(8);
+});
+
+test('returns sum of two numbers', () => {
+    expect(analyzeArray([1,8,3,4,2,6]).length).toBe(6);
+});

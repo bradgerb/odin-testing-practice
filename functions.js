@@ -55,8 +55,30 @@ const calculator = {
     return zeroedShiftedChar + 97
  }
 
-function analyzeArray() {
+function analyzeArray(array) {
+    let arrayValues = {};
+    let sum = 0;
+    let min = null;
+    let max = null;
 
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+
+        if (min > array[i] || min === null) {
+            min = array[i]
+        }
+
+        if (max < array[i] || max === null) {
+            max = array[i]
+        }
+    }
+
+    arrayValues.length = array.length
+    arrayValues.average = sum /  array.length;
+    arrayValues.min = min;
+    arrayValues.max = max;
+    
+    return arrayValues
 }
 
-module.exports = { capitalize, reverseString, calculator, caesarCipher }
+module.exports = { capitalize, reverseString, calculator, caesarCipher, analyzeArray }
